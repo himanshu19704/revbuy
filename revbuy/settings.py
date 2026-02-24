@@ -129,3 +129,5 @@ LOGIN_URL = '/accounts/login'
 
 LOGIN_REDIRECT_URL = '/car/'
 LOGOUT_REDIRECT_URL = '/car/'
+
+CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']  
