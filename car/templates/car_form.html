@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+RevBuy | Car Form
+{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-4">
+
+                    <h2 class="text-center mb-4">
+                        {% if form.instance.pk %}
+                            Edit Listing
+                        {% else %}
+                            🚗 Create Your Listing
+                        {% endif %}
+                    </h2>
+
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        <div class="d-grid mt-3">
+                            <button class="btn btn-warning btn-lg">
+                                Submit
+                            </button>
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <a href="{% url 'car_list' %}" class="btn btn-outline-secondary">
+                                Back to Listings
+                            </a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
