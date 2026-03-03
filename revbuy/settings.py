@@ -26,7 +26,16 @@ SECRET_KEY = 'django-insecure-f74-trtueoydq9iqs)8rfn#-+ag)xz!a(kx@!rwx*blcgtivh!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.onrender.com', '127.0.0.1' , 'revbuy-production.up.railway.app']
+ALLOWED_HOSTS = [
+    '.onrender.com',
+    '.railway.app',
+    '127.0.0.1'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.onrender.com',
+    'https://*.railway.app',
+]
 
 
 # Application definition
@@ -130,4 +139,4 @@ LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/car/'
 LOGOUT_REDIRECT_URL = '/car/'
 
-CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']  
+# CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']  
